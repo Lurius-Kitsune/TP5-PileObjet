@@ -28,5 +28,16 @@ namespace _TP5_PileObjet
             this.nbMaxElt = nbMaxElt;
             this.elements = new List<int>();
         }
+
+        /// <summary>
+        /// retourne un booléen indiquant si la pile est vide.
+        /// Une pile est vide si le nombre d'élément 
+        /// contenue dans tabElem est égale à 0
+        /// </summary>
+        /// <returns></returns>
+        private bool PileVide()
+        {
+            return this.elements.Count == 0;
+        }
     }
 }
