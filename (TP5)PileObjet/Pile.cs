@@ -39,5 +39,16 @@ namespace _TP5_PileObjet
         {
             return this.elements.Count == 0;
         }
+
+        /// <summary>
+        /// retourne un booléen indiquant si la pile est pleine.
+        /// Une pile est vide si le nombre d'élément 
+        /// contenue dans tabElem est égale à unePile.maxElt
+        /// </summary>
+        /// <returns></returns>
+        private bool PilePleine()
+        {
+            return this.elements.Count >= this.nbMaxElt;
+        }
     }
 }
