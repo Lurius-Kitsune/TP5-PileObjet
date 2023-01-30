@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace _TP5_PileObjet
 {
@@ -49,6 +50,25 @@ namespace _TP5_PileObjet
         private bool PilePleine()
         {
             return this.elements.Count >= this.nbMaxElt;
+        }
+
+        /// <summary>
+        /// Cette méthode ajoute la valeur passée en paramètre au sommet de la pile
+        /// Si la pile n'est pas pleine.
+        /// Si la pile est pleine, déclenchement d'une exception.
+        /// </summary>
+        /// <param name="nb">élément à empiler</param>
+        public void Empiler(int nb)
+        {
+            if (PilePleine())
+            {
+                // Informer que la pile est pleine !
+                throw new Exception("[Erreur] Pile pleine, impossible d'empiler un élément");
+            }
+            else
+            {
+                this.elements.Add(nb);
+            }
         }
     }
 }
