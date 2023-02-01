@@ -1,5 +1,6 @@
 ﻿using MesOutils;
 using System;
+using Utilitaires;
 
 namespace _TP5_PileObjet
 {
@@ -7,11 +8,19 @@ namespace _TP5_PileObjet
     {
         static void Main(string[] args)
         {
-            TestePileVidePleine(5);
-            TestePileVidePleine(0);
-            TesteEmpiler(20);
-            TesteEmpiler(2);
-            TesteEmpilerDepiler(20);
+            //TestePileVidePleine(5);
+            //TestePileVidePleine(0);
+            //TesteEmpiler(20);
+            //TesteEmpiler(2);
+            //TesteEmpilerDepiler(20);
+
+            //Test de SaisirNB
+            int nbSaisi = Utilitaire.SaisirNb();
+            Console.WriteLine($"Nombre saisie : {nbSaisi} ");
+            nbSaisi = Utilitaire.SaisirNb(10);
+            Console.WriteLine($"Nombre saisie : {nbSaisi} ");
+            nbSaisi = Utilitaire.SaisirNb(10, 30);
+            Console.WriteLine($"Nombre saisie : {nbSaisi} ");
             Console.WriteLine("[Info]Fin du programme");
             Console.ReadKey();
         }
