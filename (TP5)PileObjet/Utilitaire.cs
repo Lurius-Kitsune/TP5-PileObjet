@@ -10,30 +10,43 @@ namespace Utilitaires
     {
         public int SaisirNb()
         {
-            Console.WriteLine("Veuillez saisir un nombre entier : ");
-            int nb = Convert.ToInt32(Console.ReadLine());
+            int nb = 0;
+            try
+            {
+                Console.WriteLine("Veuillez saisir un nombre entier : ");
+                int nb = Convert.ToInt32(Console.ReadLine());
+            } 
+            catch (FormatException) { };
             return nb;
         }
 
         public int SaisirNb(int pMin)
         {
             int nb = 0;
-            while (nb >= pMin)
+            do
             {
-                Console.WriteLine($"Veuillez saisir un nombre entier de minimum {pMin}: ");
-                nb = Convert.ToInt32(Console.ReadLine());
-            }
+                try
+                {
+                    Console.WriteLine($"Veuillez saisir un nombre entier de minimum {pMin}: ");
+                    nb = Convert.ToInt32(Console.ReadLine());
+                }
+                catch (FormatException) { }
+            } while (nb >= pMin);
             return nb;
         }
 
         public int SaisirNb(int pMin, int pMax)
         {
             int nb = 0;
-            while (nb >= pMin && nb <= pMax)
+            do
             {
-                Console.WriteLine($"Veuillez saisir un nombre entier compris entre {pMin} et {pMax}: ");
-                nb = Convert.ToInt32(Console.ReadLine());
-            }
+                try
+                {
+                    Console.WriteLine($"Veuillez saisir un nombre entier compris entre {pMin} et {pMax}: ");
+                    nb = Convert.ToInt32(Console.ReadLine());
+                }
+                catch (FormatException) { }
+            } while (nb >= pMin && nb <= pMax)
             return nb;
         }
     }
