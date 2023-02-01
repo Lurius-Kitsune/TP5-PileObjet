@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Utilitaires
 {
@@ -14,7 +10,7 @@ namespace Utilitaires
             try
             {
                 Console.WriteLine("Veuillez saisir un nombre entier : ");
-                int nb = Convert.ToInt32(Console.ReadLine());
+                nb = Convert.ToInt32(Console.ReadLine());
             } 
             catch (FormatException) { };
             return nb;
