@@ -21,7 +21,7 @@ namespace MesOutils
         private List<int> elements;
 
         /// <summary>
-        /// Constructeur de la classe Pile
+        /// Constructeur de la classe <see cref="Pile"/>.
         /// </summary>
         /// <param name="nbMaxElt">Taille maximum de la pile</param>
         public Pile(int nbMaxElt)
