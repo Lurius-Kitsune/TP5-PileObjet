@@ -14,14 +14,16 @@ namespace _TP5_PileObjet
             //TesteEmpiler(2);
             //TesteEmpilerDepiler(20);
 
-            //Test de SaisirNB
-            int nbSaisi = Utilitaire.SaisirNb();
-            Console.WriteLine($"Nombre saisie : {nbSaisi} ");
-            nbSaisi = Utilitaire.SaisirNb(10);
-            Console.WriteLine($"Nombre saisie : {nbSaisi} ");
-            nbSaisi = Utilitaire.SaisirNb(10, 30);
-            Console.WriteLine($"Nombre saisie : {nbSaisi} ");
-            Console.WriteLine("[Info]Fin du programme");
+            ////Test de SaisirNB
+            //int nbSaisi = Utilitaire.SaisirNb();
+            //Console.WriteLine($"Nombre saisie : {nbSaisi} ");
+            //nbSaisi = Utilitaire.SaisirNb(10);
+            //Console.WriteLine($"Nombre saisie : {nbSaisi} ");
+            //nbSaisi = Utilitaire.SaisirNb(10, 30);
+            //Console.WriteLine($"Nombre saisie : {nbSaisi} ");
+            //Console.WriteLine("[Info]Fin du programme");
+
+            TesteConversion();
             Console.ReadKey();
         }
         ///
@@ -97,29 +99,15 @@ namespace _TP5_PileObjet
         static void TesteConversion()
         {
             int elements, nombre, nBase;
+            Console.WriteLine("[Nombre d'éléments de la pile]");
             elements = Utilitaire.SaisirNb();
-            Console.WriteLine("Nombre à convertir : ");
+            Console.WriteLine("[Nombre à convertir]");
             nombre = Utilitaire.SaisirNb();
-            Console.WriteLine("Veuillez entrer la nouvelle base entre 2 et 16 : ");
+            Console.WriteLine("[Base]");
             nBase = Utilitaire.SaisirNb(2, 16);
-            Console.WriteLine(Convertir(elements, nombre, nBase));
             try
             {
-                elements = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("Veuillez entrer le nombre à convertir : ");
-                nombre = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("Veuillez entrer la nouvelle base entre 2 et 16 : ");
-                nBase = Convert.ToInt32(Console.ReadLine());
-
-                while (nBase < 2 || nBase > 16)
-                {
-                    Console.WriteLine("[Info] Veuillez mettre une valeur compris entre 2 et 16");
-                    Console.WriteLine("Veuillez entrer la nouvelle base entre 2 et 16 : ");
-                    nBase = Convert.ToInt32(Console.ReadLine());
-                }
-
                 Console.WriteLine(Convertir(elements, nombre, nBase));
-
             }
             catch (Exception ex) { Console.WriteLine("[Erreur] {0}", ex.Message); }
         }
@@ -136,7 +124,7 @@ namespace _TP5_PileObjet
             Pile pile = new Pile(NbElements);
             string result = "";
             int premierNombre = NbAConvertir;
-            while (!(NbAConvertir / pNewbase == 0) && !pile.PilePleine())
+            while (!(NbAConvertir / pNewbase == 0))
             {
                 pile.Empiler(NbAConvertir % pNewbase);
                 NbAConvertir /= pNewbase;
