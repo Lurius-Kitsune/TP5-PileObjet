@@ -1,9 +1,6 @@
 ﻿using MesOutils;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Utilitaires;
 
 namespace _TP5_PileObjet.Tests
 {
@@ -60,5 +57,31 @@ namespace _TP5_PileObjet.Tests
                 Console.WriteLine(ex.Message);
             }
         }
+
+        /// <summary>
+        /// Test de la méthode Conversion(...)
+        /// Cette méthode permet la saisie des valeurs utilise à la conversion :
+        /// nombre d'éléments de la collection,
+        /// nombre à convertir,
+        /// nouvelle base
+        /// </summary>
+        public static void TesteConversion()
+        {
+            int nombre, nBase;
+            Console.WriteLine("[Nombre à convertir]");
+            nombre = Utilitaire.SaisirNb();
+            Console.WriteLine("[Base]");
+            nBase = Utilitaire.SaisirNb(2, 16);
+            TesteConversion(nombre, nBase);
+        }
+        public static void TesteConversion(int nbAConvertir, int newBase)
+        {
+            try
+            {
+                Console.WriteLine(Utilitaire.Convertir(nbAConvertir, newBase));
+            }
+            catch (Exception ex) { Console.WriteLine("[Erreur] {0}", ex.Message); }
+        }
+
     }
 }

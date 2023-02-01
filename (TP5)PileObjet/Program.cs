@@ -26,28 +26,5 @@ namespace _TP5_PileObjet
             Console.ReadKey();
         }
 
-
-        /// <summary>
-        /// Test de la méthode Conversion(...)
-        /// Cette méthode permet la saisie des valeurs utilise à la conversion :
-        /// nombre d'éléments de la collection,
-        /// nombre à convertir,
-        /// nouvelle base
-        /// </summary>
-        static void TesteConversion()
-        {
-            int nombre, nBase;
-            Console.WriteLine("[Nombre à convertir]");
-            nombre = Utilitaire.SaisirNb();
-            Console.WriteLine("[Base]");
-            nBase = Utilitaire.SaisirNb(2, 16);
-            try
-            {
-                Console.WriteLine(Utilitaire.Convertir(nombre, nBase));
-            }
-            catch (Exception ex) { Console.WriteLine("[Erreur] {0}", ex.Message); }
-        }
-
-
     }
 }

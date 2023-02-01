@@ -55,6 +55,7 @@ namespace Utilitaires
         /// <returns></returns>
         public static string Convertir(int NbAConvertir, int pNewbase)
         {
+            if (NbAConvertir <= 0) { throw new Exception("Le nombre à convertir doit être strictement positif"); }
             Pile<int> pile = new Pile<int>();
             string result = "";
             int premierNombre = NbAConvertir;
@@ -79,4 +80,4 @@ namespace Utilitaires
         }
     }
 }
-}
+
