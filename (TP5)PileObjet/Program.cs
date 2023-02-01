@@ -124,7 +124,7 @@ namespace _TP5_PileObjet
             Pile pile = new Pile(NbElements);
             string result = "";
             int premierNombre = NbAConvertir;
-            while (!(NbAConvertir / pNewbase == 0) && !pile.PilePleine())
+            while (!(NbAConvertir / pNewbase == 0))
             {
                 pile.Empiler(NbAConvertir % pNewbase);
                 NbAConvertir /= pNewbase;
