@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace _TP5_PileObjet
+namespace MesOutils
 {
     /// <summary>
     /// Pile contenant pouvant contenir des entiers.
