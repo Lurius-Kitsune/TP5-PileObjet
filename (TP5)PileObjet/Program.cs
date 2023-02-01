@@ -22,7 +22,7 @@ namespace _TP5_PileObjet
             //Console.WriteLine($"Nombre saisie : {nbSaisi} ");
             //Console.WriteLine("[Info]Fin du programme");
 
-            TesteConversion();
+            TestPile.TesteConversion();
             Console.ReadKey();
         }
 
