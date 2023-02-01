@@ -8,7 +8,7 @@ namespace MesOutils
     /// On ajoute après le dernier élément ajouté
     /// On retire toujours le dernier élément ajouté
     /// </summary>
-    class Pile<T>
+    public class Pile<T>
     {
         /// <summary>
         /// Liste contenant les éléments de la pile
