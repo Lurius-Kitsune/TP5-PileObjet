@@ -9,7 +9,7 @@ namespace _TP5_PileObjet
     {
         static void Main(string[] args)
         {
-            TestPile.TestePileVidePleine();
+            TestPile.TestePileVide();
             TestPile.TesteEmpiler();
             TestPile.TesteEmpilerDepiler();
 
@@ -25,7 +25,7 @@ namespace _TP5_PileObjet
             TesteConversion();
             Console.ReadKey();
         }
-       
+
 
         /// <summary>
         /// Test de la méthode Conversion(...)
@@ -43,41 +43,11 @@ namespace _TP5_PileObjet
             nBase = Utilitaire.SaisirNb(2, 16);
             try
             {
-                Console.WriteLine(Convertir(nombre, nBase));
+                Console.WriteLine(Utilitaire.Convertir(nombre, nBase));
             }
             catch (Exception ex) { Console.WriteLine("[Erreur] {0}", ex.Message); }
         }
 
-        /// <summary>
-        /// Convertit un nombre de base 10 en base 2 et 16
-        /// </summary>
-        /// <param name="NbElements">Nombre d'éléments de la pile</param>
-        /// <param name="NbAConvertir">Nombre à convertir</param>
-        /// <param name="pNewbase">Nouvelle base du nombre</param>
-        /// <returns></returns>
-        static string Convertir(int NbAConvertir, int pNewbase)
-        {
-            Pile<int> pile = new Pile<int>();
-            string result = "";
-            int premierNombre = NbAConvertir;
-            while (!(NbAConvertir / pNewbase == 0))
-            {
-                pile.Empiler(NbAConvertir % pNewbase);
-                NbAConvertir /= pNewbase;
-            }
-            while (!pile.PileVide())
-            {
-                int i = (int)pile.Depiler();
-                if (i <= 10)
-                {
-                    result += i;
-                }
-                else
-                {
-                    result += i.ToString("X");
-                }
-            }
-            return "La valeur de " + premierNombre + " (base 10) vaut " + result + " en base " + pNewbase; ;
-        }
+
     }
 }

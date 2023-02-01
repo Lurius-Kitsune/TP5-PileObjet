@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MesOutils;
+using System;
 
 namespace Utilitaires
 {
@@ -45,5 +46,37 @@ namespace Utilitaires
             } while (nb < pMin || nb > pMax);
             return nb;
         }
+
+        /// <summary>
+        /// Convertit un nombre de base 10 en base 2 et 16
+        /// </summary>
+        /// <param name="NbAConvertir">Nombre à convertir</param>
+        /// <param name="pNewbase">Nouvelle base du nombre</param>
+        /// <returns></returns>
+        public static string Convertir(int NbAConvertir, int pNewbase)
+        {
+            Pile<int> pile = new Pile<int>();
+            string result = "";
+            int premierNombre = NbAConvertir;
+            while (!(NbAConvertir / pNewbase == 0))
+            {
+                pile.Empiler(NbAConvertir % pNewbase);
+                NbAConvertir /= pNewbase;
+            }
+            while (!pile.PileVide())
+            {
+                int i = (int)pile.Depiler();
+                if (i <= 10)
+                {
+                    result += i;
+                }
+                else
+                {
+                    result += i.ToString("X");
+                }
+            }
+            return "La valeur de " + premierNombre + " (base 10) vaut " + result + " en base " + pNewbase; ;
+        }
     }
+}
 }
