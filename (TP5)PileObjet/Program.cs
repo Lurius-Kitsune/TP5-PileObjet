@@ -27,9 +27,9 @@ namespace _TP5_PileObjet
             Console.ReadKey();
         }
         ///
-        static void TestePileVidePleine(int nbElements)
+        static void TestePileVidePleine()
         {
-            Pile unePile = new Pile(nbElements);
+            Pile<int> unePile = new Pile<int>();
             if (unePile.PileVide())
             {
                 Console.WriteLine("La pile est vide");
@@ -38,25 +38,17 @@ namespace _TP5_PileObjet
             {
                 Console.WriteLine("La pile n'est pas vide");
             }
-            if (unePile.PilePleine())
-            {
-                Console.WriteLine("La pile est pleine");
-            }
-            else
-            {
-                Console.WriteLine("La pile n'est pas pleine");
-            }
         }
 
         /// <summary>
         /// Test de la méthode Empiler
         /// </summary>
         /// <param name="nbElements">Nombre d'éléments maximum de la pile</param>
-        static void TesteEmpiler(int nbElements)
+        static void TesteEmpiler()
         {
             try
             {
-                Pile unePile = new Pile(nbElements);
+                Pile<int> unePile = new Pile<int>();
                 unePile.Empiler(2);
                 unePile.Empiler(14);
                 unePile.Empiler(6);
@@ -68,11 +60,11 @@ namespace _TP5_PileObjet
         /// Test d'empiler - dépiler
         /// </summary>
         /// <param name="nbElements">Nombre d'éléments maximum de la pile</param>
-        static void TesteEmpilerDepiler(int nbElements)
+        static void TesteEmpilerDepiler()
         {
             try
             {
-                Pile unePile = new Pile(nbElements);
+                Pile<int> unePile = new Pile<int>();
                 unePile.Empiler(2);
                 unePile.Empiler(22);
                 int valeurDepilee = unePile.Depiler();
@@ -98,16 +90,14 @@ namespace _TP5_PileObjet
         /// </summary>
         static void TesteConversion()
         {
-            int elements, nombre, nBase;
-            Console.WriteLine("[Nombre d'éléments de la pile]");
-            elements = Utilitaire.SaisirNb();
+            int nombre, nBase;
             Console.WriteLine("[Nombre à convertir]");
             nombre = Utilitaire.SaisirNb();
             Console.WriteLine("[Base]");
             nBase = Utilitaire.SaisirNb(2, 16);
             try
             {
-                Console.WriteLine(Convertir(elements, nombre, nBase));
+                Console.WriteLine(Convertir(nombre, nBase));
             }
             catch (Exception ex) { Console.WriteLine("[Erreur] {0}", ex.Message); }
         }
@@ -119,9 +109,9 @@ namespace _TP5_PileObjet
         /// <param name="NbAConvertir">Nombre à convertir</param>
         /// <param name="pNewbase">Nouvelle base du nombre</param>
         /// <returns></returns>
-        static string Convertir(int NbElements, int NbAConvertir, int pNewbase)
+        static string Convertir(int NbAConvertir, int pNewbase)
         {
-            Pile pile = new Pile(NbElements);
+            Pile<int> pile = new Pile<int>();
             string result = "";
             int premierNombre = NbAConvertir;
             while (!(NbAConvertir / pNewbase == 0))
