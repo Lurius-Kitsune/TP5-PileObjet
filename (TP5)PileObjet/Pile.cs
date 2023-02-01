@@ -15,6 +15,8 @@ namespace MesOutils
         /// </summary>
         private List<T> elements;
 
+        /// Property
+        public int Count { get => this.elements.Count; }
 
         /// <summary>
         /// Constructeur de la classe <see cref="Pile"/>.
@@ -53,7 +55,7 @@ namespace MesOutils
         /// </summary>
         /// <param name="unePile">Pile sur laquelle il faut depiler</param>
         /// <returns>Valeur dépilée</returns>
-        public int Depiler()
+        public T Depiler()
         {
             if (PileVide())
             {
@@ -61,7 +63,7 @@ namespace MesOutils
             }
             else
             {
-                int valeur = this.elements[this.elements.Count - 1];
+                T valeur = this.elements[this.elements.Count - 1];
                 this.elements.RemoveAt(this.elements.Count - 1);
                 return valeur;
             }
