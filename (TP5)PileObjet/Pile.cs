@@ -70,5 +70,25 @@ namespace _TP5_PileObjet
                 this.elements.Add(nb);
             }
         }
+
+        /// <summary>
+        /// Renvoie la valeur située au sommet de la pile
+        /// Si la pile est vide, la méthode déclenche une Exception.
+        /// </summary>
+        /// <param name="unePile">Pile sur laquelle il faut depiler</param>
+        /// <returns>Valeur dépilée</returns>
+        public object Depiler()
+        {
+            if (PileVide())
+            {
+                throw new Exception("[Erreur] Pile vide, impossible de dépiler un élément");
+            }
+            else
+            {
+                object valeur = this.elements[this.elements.Count - 1];
+                this.elements.RemoveAt(this.elements.Count - 1);
+                return valeur;
+            }
+        }
     }
 }
