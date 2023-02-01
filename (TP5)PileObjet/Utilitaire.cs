@@ -42,7 +42,7 @@ namespace Utilitaires
                     nb = Convert.ToInt32(Console.ReadLine());
                 }
                 catch (FormatException) { }
-            } while (nb >= pMin && nb <= pMax)
+            } while (nb >= pMin && nb <= pMax);
             return nb;
         }
     }
