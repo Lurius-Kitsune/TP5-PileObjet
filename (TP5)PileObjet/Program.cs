@@ -86,5 +86,74 @@ namespace _TP5_PileObjet
                 Console.WriteLine(ex.Message);
             }
         }
+
+        /// <summary>
+        /// Test de la méthode Conversion(...)
+        /// Cette méthode permet la saisie des valeurs utilise à la conversion :
+        /// nombre d'éléments de la collection,
+        /// nombre à convertir,
+        /// nouvelle base
+        /// </summary>
+        static void TesteConversion()
+        {
+            int elements, nombre, nBase;
+            elements = Utilitaire.SaisirNb();
+            Console.WriteLine("Nombre à convertir : ");
+            nombre = Utilitaire.SaisirNb();
+            Console.WriteLine("Veuillez entrer la nouvelle base entre 2 et 16 : ");
+            nBase = Utilitaire.SaisirNb(2, 16);
+            Console.WriteLine(Convertir(elements, nombre, nBase));
+            try
+            {
+                elements = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Veuillez entrer le nombre à convertir : ");
+                nombre = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Veuillez entrer la nouvelle base entre 2 et 16 : ");
+                nBase = Convert.ToInt32(Console.ReadLine());
+
+                while (nBase < 2 || nBase > 16)
+                {
+                    Console.WriteLine("[Info] Veuillez mettre une valeur compris entre 2 et 16");
+                    Console.WriteLine("Veuillez entrer la nouvelle base entre 2 et 16 : ");
+                    nBase = Convert.ToInt32(Console.ReadLine());
+                }
+
+                Console.WriteLine(Convertir(elements, nombre, nBase));
+
+            }
+            catch (Exception ex) { Console.WriteLine("[Erreur] {0}", ex.Message); }
+        }
+
+        /// <summary>
+        /// Convertit un nombre de base 10 en base 2 et 16
+        /// </summary>
+        /// <param name="NbElements">Nombre d'éléments de la pile</param>
+        /// <param name="NbAConvertir">Nombre à convertir</param>
+        /// <param name="pNewbase">Nouvelle base du nombre</param>
+        /// <returns></returns>
+        static string Convertir(int NbElements, int NbAConvertir, int pNewbase)
+        {
+            Pile pile = new Pile(NbElements);
+            string result = "";
+            int premierNombre = NbAConvertir;
+            while (!(NbAConvertir / pNewbase == 0) && !pile.PilePleine())
+            {
+                pile.Empiler(NbAConvertir % pNewbase);
+                NbAConvertir /= pNewbase;
+            }
+            while (!pile.PileVide())
+            {
+                int i = (int)pile.Depiler();
+                if (i <= 10)
+                {
+                    result += i;
+                }
+                else
+                {
+                    result += i.ToString("X");
+                }
+            }
+            return "La valeur de " + premierNombre + " (base 10) vaut " + result + " en base " + pNewbase; ;
+        }
     }
 }
