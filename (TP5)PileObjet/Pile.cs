@@ -8,26 +8,21 @@ namespace MesOutils
     /// On ajoute après le dernier élément ajouté
     /// On retire toujours le dernier élément ajouté
     /// </summary>
-    class Pile
-    {   
-        /// <summary>
-        /// Nombre maximum d'éléments de la Pile
-        /// </summary>
-        private int nbMaxElt;
-
+    class Pile<T>
+    {
         /// <summary>
         /// Liste contenant les éléments de la pile
         /// </summary>
-        private List<int> elements;
+        private List<T> elements;
+
 
         /// <summary>
         /// Constructeur de la classe <see cref="Pile"/>.
         /// </summary>
         /// <param name="nbMaxElt">Taille maximum de la pile</param>
-        public Pile(int nbMaxElt)
+        public Pile()
         {
-            this.nbMaxElt = nbMaxElt;
-            this.elements = new List<int>();
+            this.elements = new List<T>();
         }
 
         /// <summary>
@@ -42,33 +37,14 @@ namespace MesOutils
         }
 
         /// <summary>
-        /// retourne un booléen indiquant si la pile est pleine.
-        /// Une pile est vide si le nombre d'élément 
-        /// contenue dans tabElem est égale à unePile.maxElt
-        /// </summary>
-        /// <returns></returns>
-        public bool PilePleine()
-        {
-            return this.elements.Count >= this.nbMaxElt;
-        }
-
-        /// <summary>
         /// Cette méthode ajoute la valeur passée en paramètre au sommet de la pile
         /// Si la pile n'est pas pleine.
         /// Si la pile est pleine, déclenchement d'une exception.
         /// </summary>
-        /// <param name="nb">élément à empiler</param>
-        public void Empiler(int nb)
+        /// <param name="valeur">élément à empiler</param>
+        public void Empiler(T valeur)
         {
-            if (PilePleine())
-            {
-                // Informer que la pile est pleine !
-                throw new Exception("[Erreur] Pile pleine, impossible d'empiler un élément");
-            }
-            else
-            {
-                this.elements.Add(nb);
-            }
+           this.elements.Add(valeur);
         }
 
         /// <summary>
