@@ -77,7 +77,7 @@ namespace _TP5_PileObjet
         /// </summary>
         /// <param name="unePile">Pile sur laquelle il faut depiler</param>
         /// <returns>Valeur dépilée</returns>
-        public object Depiler()
+        public int Depiler()
         {
             if (PileVide())
             {
