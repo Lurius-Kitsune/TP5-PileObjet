@@ -36,7 +36,7 @@ namespace _TP5_PileObjet
         /// contenue dans tabElem est égale à 0
         /// </summary>
         /// <returns></returns>
-        private bool PileVide()
+        public bool PileVide()
         {
             return this.elements.Count == 0;
         }
@@ -47,7 +47,7 @@ namespace _TP5_PileObjet
         /// contenue dans tabElem est égale à unePile.maxElt
         /// </summary>
         /// <returns></returns>
-        private bool PilePleine()
+        public bool PilePleine()
         {
             return this.elements.Count >= this.nbMaxElt;
         }
