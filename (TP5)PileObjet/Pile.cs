@@ -85,7 +85,7 @@ namespace _TP5_PileObjet
             }
             else
             {
-                object valeur = this.elements[this.elements.Count - 1];
+                int valeur = this.elements[this.elements.Count - 1];
                 this.elements.RemoveAt(this.elements.Count - 1);
                 return valeur;
             }
