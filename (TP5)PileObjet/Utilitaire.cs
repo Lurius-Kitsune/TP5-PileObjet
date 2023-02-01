@@ -8,7 +8,7 @@ namespace Utilitaires
 {
     public abstract class Utilitaire
     {
-        public int SaisirNb()
+        public static int SaisirNb()
         {
             int nb = 0;
             try
@@ -20,7 +20,7 @@ namespace Utilitaires
             return nb;
         }
 
-        public int SaisirNb(int pMin)
+        public static int SaisirNb(int pMin)
         {
             int nb = 0;
             do
@@ -35,7 +35,7 @@ namespace Utilitaires
             return nb;
         }
 
-        public int SaisirNb(int pMin, int pMax)
+        public static int SaisirNb(int pMin, int pMax)
         {
             int nb = 0;
             do
