@@ -1,4 +1,5 @@
-﻿using MesOutils;
+﻿using _TP5_PileObjet.Tests;
+using MesOutils;
 using System;
 using Utilitaires;
 
@@ -8,11 +9,9 @@ namespace _TP5_PileObjet
     {
         static void Main(string[] args)
         {
-            //TestePileVidePleine(5);
-            //TestePileVidePleine(0);
-            //TesteEmpiler(20);
-            //TesteEmpiler(2);
-            //TesteEmpilerDepiler(20);
+            TestPile.TestePileVidePleine();
+            TestPile.TesteEmpiler();
+            TestPile.TesteEmpilerDepiler();
 
             ////Test de SaisirNB
             //int nbSaisi = Utilitaire.SaisirNb();
@@ -26,60 +25,7 @@ namespace _TP5_PileObjet
             TesteConversion();
             Console.ReadKey();
         }
-        ///
-        static void TestePileVidePleine()
-        {
-            Pile<int> unePile = new Pile<int>();
-            if (unePile.PileVide())
-            {
-                Console.WriteLine("La pile est vide");
-            }
-            else
-            {
-                Console.WriteLine("La pile n'est pas vide");
-            }
-        }
-
-        /// <summary>
-        /// Test de la méthode Empiler
-        /// </summary>
-        /// <param name="nbElements">Nombre d'éléments maximum de la pile</param>
-        static void TesteEmpiler()
-        {
-            try
-            {
-                Pile<int> unePile = new Pile<int>();
-                unePile.Empiler(2);
-                unePile.Empiler(14);
-                unePile.Empiler(6);
-            }
-            catch (Exception ex) { Console.WriteLine(ex.Message); }
-        }
-
-        /// <summary>
-        /// Test d'empiler - dépiler
-        /// </summary>
-        /// <param name="nbElements">Nombre d'éléments maximum de la pile</param>
-        static void TesteEmpilerDepiler()
-        {
-            try
-            {
-                Pile<int> unePile = new Pile<int>();
-                unePile.Empiler(2);
-                unePile.Empiler(22);
-                int valeurDepilee = unePile.Depiler();
-                Console.WriteLine("valeur dépilée : " + valeurDepilee);
-                unePile.Empiler(2);
-                valeurDepilee = unePile.Depiler();
-                valeurDepilee = unePile.Depiler();
-                valeurDepilee = unePile.Depiler();
-                valeurDepilee = unePile.Depiler();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-        }
+       
 
         /// <summary>
         /// Test de la méthode Conversion(...)
