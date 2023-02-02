@@ -104,5 +104,38 @@ namespace _TP5_PileObjet.Tests
             return message;
         }
 
+        /// <summary>
+        /// Permet de teste l'inversion d'une chaine de caractére.
+        /// </summary>
+        public static void TesteInversePhrase()
+        {
+            try
+            {
+                String phrase = UtilitaireAPI.RecupereLoremIpsum(3);
+                Console.WriteLine($"\n\nphrase: \n{phrase}");
+                String phraseInverse = InversePhrase(phrase);
+                Console.WriteLine("// \nPhrase Inverser : ");
+                Console.WriteLine(phraseInverse);
+                Console.WriteLine("\n\n// Code optimiser : ");
+                phraseInverse = InversePhraseMieux(phrase);
+                Console.WriteLine(phraseInverse);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Code améliorer de la methode InversePhrase
+        /// </summary>
+        /// <param name="phrase">La phrase à inverser</param>
+        /// <returns>La phrase inverser</returns>
+        public static string InversePhraseMieux(String phrase)
+        {
+            var tab = phrase.Split(' ');
+            Array.Reverse(tab);
+            return String.Join(" ", tab);
+        }
     }
 }
