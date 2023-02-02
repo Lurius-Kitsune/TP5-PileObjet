@@ -12,8 +12,8 @@ namespace Utilitaires
             {
                 Console.WriteLine("Veuillez saisir un nombre entier : ");
                 nb = Convert.ToInt32(Console.ReadLine());
-            } 
-            catch (FormatException) { };
+            }
+            catch (FormatException) { Console.WriteLine("[Erreur FormatException] la valeur par défaut sera à 1"); };
             return nb;
         }
 
