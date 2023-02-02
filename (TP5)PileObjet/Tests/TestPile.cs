@@ -83,5 +83,26 @@ namespace _TP5_PileObjet.Tests
             catch (Exception ex) { Console.WriteLine("[Erreur] {0}", ex.Message); }
         }
 
+        /// <summary>
+        /// Inverse la phrase
+        /// </summary>
+        /// <param name="phrase"> La phrase à inverser </param>
+        /// <returns></returns>
+        static string InversePhrase(String phrase)
+        {
+            Pile<string> pile = new Pile<string>();
+            var tab = phrase.Split(' ');
+            foreach (string mot in tab)
+            {
+                pile.Empiler(mot);
+            }
+            String message = "";
+            while (!pile.PileVide())
+            {
+                message += " " + pile.Depiler();
+            }
+            return message;
+        }
+
     }
 }
