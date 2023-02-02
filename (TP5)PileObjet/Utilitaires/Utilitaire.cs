@@ -3,7 +3,7 @@ using System;
 
 namespace Utilitaires
 {
-    public abstract class Utilitaire
+    public static class Utilitaire
     {
         public static int SaisirNb()
         {
