@@ -78,6 +78,18 @@ namespace Utilitaires
             }
             return "La valeur de " + premierNombre + " (base 10) vaut " + result + " en base " + pNewbase; ;
         }
+
+        /// <summary>
+        /// Code améliorer de la methode InversePhrase
+        /// </summary>
+        /// <param name="phrase">La phrase à inverser</param>
+        /// <returns>La phrase inverser</returns>
+        public static string InversePhrase(String phrase)
+        {
+            var tab = phrase.Split(' ');
+            Array.Reverse(tab);
+            return String.Join(" ", tab);
+        }
     }
 }
 

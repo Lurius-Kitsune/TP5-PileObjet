@@ -116,9 +116,6 @@ namespace _TP5_PileObjet.Tests
                 String phraseInverse = InversePhrase(phrase);
                 Console.WriteLine("// \nPhrase Inverser : ");
                 Console.WriteLine(phraseInverse);
-                Console.WriteLine("\n\n// Code optimiser : ");
-                phraseInverse = InversePhraseMieux(phrase);
-                Console.WriteLine(phraseInverse);
             }
             catch (Exception ex)
             {
@@ -126,16 +123,6 @@ namespace _TP5_PileObjet.Tests
             }
         }
 
-        /// <summary>
-        /// Code améliorer de la methode InversePhrase
-        /// </summary>
-        /// <param name="phrase">La phrase à inverser</param>
-        /// <returns>La phrase inverser</returns>
-        public static string InversePhraseMieux(String phrase)
-        {
-            var tab = phrase.Split(' ');
-            Array.Reverse(tab);
-            return String.Join(" ", tab);
-        }
+        
     }
 }
