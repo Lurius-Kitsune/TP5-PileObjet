@@ -16,7 +16,7 @@ namespace Utilitaires
         /// <param name="nbParagraphes"></param>
         /// <returns></returns>
         /// <exception cref="Exception"></exception>
-        static String RecupereLoremIpsum(int nbParagraphes)
+        public static String RecupereLoremIpsum(int nbParagraphes)
         {
             HttpClient client = new HttpClient();
 
