@@ -8,26 +8,23 @@ namespace MesOutils
     /// On ajoute après le dernier élément ajouté
     /// On retire toujours le dernier élément ajouté
     /// </summary>
-    class Pile
-    {   
-        /// <summary>
-        /// Nombre maximum d'éléments de la Pile
-        /// </summary>
-        private int nbMaxElt;
-
+    public class Pile<T>
+    {
         /// <summary>
         /// Liste contenant les éléments de la pile
         /// </summary>
-        private List<int> elements;
+        private List<T> elements;
+
+        /// Property
+        public int Count { get => this.elements.Count; }
 
         /// <summary>
-        /// Constructeur de la classe Pile
+        /// Constructeur de la classe <see cref="Pile"/>.
         /// </summary>
         /// <param name="nbMaxElt">Taille maximum de la pile</param>
-        public Pile(int nbMaxElt)
+        public Pile()
         {
-            this.nbMaxElt = nbMaxElt;
-            this.elements = new List<int>();
+            this.elements = new List<T>();
         }
 
         /// <summary>
@@ -42,33 +39,14 @@ namespace MesOutils
         }
 
         /// <summary>
-        /// retourne un booléen indiquant si la pile est pleine.
-        /// Une pile est vide si le nombre d'élément 
-        /// contenue dans tabElem est égale à unePile.maxElt
-        /// </summary>
-        /// <returns></returns>
-        public bool PilePleine()
-        {
-            return this.elements.Count >= this.nbMaxElt;
-        }
-
-        /// <summary>
         /// Cette méthode ajoute la valeur passée en paramètre au sommet de la pile
         /// Si la pile n'est pas pleine.
         /// Si la pile est pleine, déclenchement d'une exception.
         /// </summary>
-        /// <param name="nb">élément à empiler</param>
-        public void Empiler(int nb)
+        /// <param name="valeur">élément à empiler</param>
+        public void Empiler(T valeur)
         {
-            if (PilePleine())
-            {
-                // Informer que la pile est pleine !
-                throw new Exception("[Erreur] Pile pleine, impossible d'empiler un élément");
-            }
-            else
-            {
-                this.elements.Add(nb);
-            }
+           this.elements.Add(valeur);
         }
 
         /// <summary>
@@ -77,7 +55,7 @@ namespace MesOutils
         /// </summary>
         /// <param name="unePile">Pile sur laquelle il faut depiler</param>
         /// <returns>Valeur dépilée</returns>
-        public int Depiler()
+        public T Depiler()
         {
             if (PileVide())
             {
@@ -85,7 +63,7 @@ namespace MesOutils
             }
             else
             {
-                int valeur = this.elements[this.elements.Count - 1];
+                T valeur = this.elements[this.elements.Count - 1];
                 this.elements.RemoveAt(this.elements.Count - 1);
                 return valeur;
             }
