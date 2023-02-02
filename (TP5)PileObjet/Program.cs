@@ -22,7 +22,18 @@ namespace _TP5_PileObjet
             //Console.WriteLine($"Nombre saisie : {nbSaisi} ");
             //Console.WriteLine("[Info]Fin du programme");
 
-            TestPile.TesteConversion();
+            //TestPile.TesteConversion();
+            // Test LoremIpsum
+            String phrase = UtilitaireAPI.RecupereLoremIpsum(3);
+            Console.WriteLine("--------------------------------");
+            Console.WriteLine("phrase :");
+            Console.WriteLine(phrase);
+            String phraseInversee = Utilitaire.InversePhrase(phrase);
+            Console.WriteLine("\nphrase inversée :");
+            Console.WriteLine(phraseInversee);
+            TestPile.TesteInversePhrase();
+
+            Console.WriteLine("[Fin du programme]");
             Console.ReadKey();
         }
 
